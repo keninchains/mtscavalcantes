@@ -1,4 +1,9 @@
 @import "tailwindcss";
+@import "./figtree.css";
+
+body {
+  font-family: "Figtree", sans-serif;
+}
 
 .debug {
   border: 2px solid red;
