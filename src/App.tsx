@@ -11,6 +11,9 @@ import { Email3 } from "./components/iconmonstr/Email3";
 import { Github3 } from "./components/iconmonstr/Github3";
 import { Linkedin3 } from "./components/iconmonstr/Linkedin3";
 
+import { SKILLS } from "./data/skills";
+import { Pill } from "./components/Pill";
+
 export default function App() {
   return (
     <div className="flex min-h-screen flex-col bg-mist-950 text-mist-50">
@@ -24,7 +27,7 @@ export default function App() {
             <p className="text-2xl font-semibold">Matheus Cavalcante</p>
           </div>
           <div className="flex items-center">
-            <SpotlightCard className="grid place-items-center px-0 py-0">
+            <SpotlightCard className="grid place-items-center border-stone-700 px-0 py-0">
               <a
                 href="/curriculo"
                 className="flex h-10 w-30 items-center justify-center gap-2"
@@ -110,19 +113,29 @@ export default function App() {
             </BorderGlow>
           </div>
         </div>
-        <div className="flex flex-col items-center">
-          <h2 className="py-8 text-6xl font-semibold">Habilidades</h2>
-          <div></div>
+        <div className="flex flex-col">
+          <h2 className="w-fit self-center py-8 text-6xl font-semibold">
+            Habilidades
+          </h2>
+          <div className="px-96">
+            <ul className="flex flex-wrap justify-center gap-6">
+              {SKILLS.map((skill, index) => (
+                <li key={index}>
+                  <Pill icon={skill.icon} title={skill.title} />
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-        <div className="flex flex-col items-center">
+        <div className="flex w-fit flex-col items-center self-center">
           <h2 className="py-8 text-6xl font-semibold">Experiência</h2>
           <div></div>
         </div>
-        <div className="flex flex-col items-center">
+        <div className="flex w-fit flex-col items-center self-center">
           <h2 className="py-8 text-6xl font-semibold">Conquistas</h2>
           <div></div>
         </div>
-        <div className="flex flex-col items-center">
+        <div className="flex w-fit flex-col items-center self-center">
           <h2 className="py-8 text-6xl font-semibold">Contato</h2>
           <div></div>
         </div>
