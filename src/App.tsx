@@ -3,8 +3,13 @@ import SpotlightCard from "./components/ReactBits/SpotlightCard";
 import { ArrowDownTrayOutline } from "./components/heroicons/ArrowDownTrayOutline";
 import DarkVeil from "./components/ReactBits/DarkVeil";
 import TextType from "./components/ReactBits/TextType";
+import BorderGlow from "./components/ReactBits/BorderGlow";
 
 import Me from "./assets/images/jpgs/me.jpg";
+
+import { Email3 } from "./components/iconmonstr/Email3";
+import { Github3 } from "./components/iconmonstr/Github3";
+import { Linkedin3 } from "./components/iconmonstr/Linkedin3";
 
 export default function App() {
   return (
@@ -52,28 +57,57 @@ export default function App() {
               cursorBlinkDuration={0.5}
             />
           </div>
+          <div className="flex justify-center py-16">
+            <ul className="flex gap-4">
+              <li>
+                <a href="mailto:mtscavalcantes.mc@outlook.com">
+                  <Email3 className="size-8" />
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/ms-cavalcante/">
+                  <Linkedin3 className="size-8" />
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/keninchains">
+                  <Github3 className="size-8" />
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
       <div className="flex flex-col gap-8">
         <div className="flex flex-col items-center bg-linear-to-b from-black to-transparent">
           <h2 className="py-8 text-6xl font-semibold">Sobre</h2>
-          <div className="flex flex-row gap-8 px-80">
-            <div className="w-fit shrink-0">
-              <img src={Me} className="size-64 shrink-0 rounded-full" />
-            </div>
-            <p className="text-lg">
-              Estudante do quarto ano de Engenharia de Computação na UTFPR,
-              câmpus Pato Branco. Atuo profissionalmente como Desenvolvedor Web
-              Full-Stack, implementando funcionalidades robustas e contribuindo
-              na criação de produtos inovadores e elegantes. Possuo fortes
-              habilidades analíticas, facilidade para aprender novas
-              tecnologias, e vocação natural para papéis de liderança. Na
-              faculdade, participei de quatro olimpíadas de conhecimento
-              (Cálculo), obtendo ótimos resultados em todas elas. Além disso,
-              atuei como monitor de Cálculo I por dois semestres, ajudando
-              dezenas de estudantes mensalmente com atendimentos presenciais e
-              remotos.
-            </p>
+          <div className="px-80">
+            <BorderGlow
+              edgeSensitivity={10}
+              glowColor="260 100 50"
+              backgroundColor="#161b1d"
+              coneSpread={10}
+              className="p-8"
+            >
+              <div className="flex flex-row gap-8">
+                <div className="w-fit shrink-0">
+                  <img src={Me} className="size-64 shrink-0 rounded-full" />
+                </div>
+                <p className="text-lg">
+                  Estudante do quarto ano de Engenharia de Computação na UTFPR,
+                  câmpus Pato Branco. Atuo profissionalmente como Desenvolvedor
+                  Web Full-Stack, implementando funcionalidades robustas e
+                  contribuindo na criação de produtos inovadores e elegantes.
+                  Possuo fortes habilidades analíticas, facilidade para aprender
+                  novas tecnologias, e vocação natural para papéis de liderança.
+                  Na faculdade, participei de quatro olimpíadas de conhecimento
+                  (Cálculo), obtendo ótimos resultados em todas elas. Além
+                  disso, atuei como monitor de Cálculo I por dois semestres,
+                  ajudando dezenas de estudantes mensalmente com atendimentos
+                  presenciais e remotos.
+                </p>
+              </div>
+            </BorderGlow>
           </div>
         </div>
         <div className="flex flex-col items-center">
@@ -86,6 +120,10 @@ export default function App() {
         </div>
         <div className="flex flex-col items-center">
           <h2 className="py-8 text-6xl font-semibold">Conquistas</h2>
+          <div></div>
+        </div>
+        <div className="flex flex-col items-center">
+          <h2 className="py-8 text-6xl font-semibold">Contato</h2>
           <div></div>
         </div>
       </div>
