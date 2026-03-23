@@ -4,6 +4,7 @@ import { ArrowDownTrayOutline } from "./components/heroicons/ArrowDownTrayOutlin
 import DarkVeil from "./components/ReactBits/DarkVeil";
 import TextType from "./components/ReactBits/TextType";
 import BorderGlow from "./components/ReactBits/BorderGlow";
+import Carousel from "./components/ReactBits/Carousel";
 
 import Me from "./assets/images/jpgs/me.jpg";
 
@@ -13,6 +14,8 @@ import { Linkedin3 } from "./components/iconmonstr/Linkedin3";
 
 import { SKILLS } from "./data/skills";
 import { Pill } from "./components/Pill";
+
+import { EXPERIENCES } from "./data/experience";
 
 export default function App() {
   return (
@@ -52,8 +55,8 @@ export default function App() {
               ]}
               initialDelay={1000}
               typingSpeed={75}
-              pauseDuration={2000}
-              loop={false}
+              pauseDuration={2500}
+              loop={true}
               showCursor
               cursorCharacter="_"
               deletingSpeed={50}
@@ -127,16 +130,32 @@ export default function App() {
             </ul>
           </div>
         </div>
-        <div className="flex w-fit flex-col items-center self-center">
-          <h2 className="py-8 text-6xl font-semibold">Experiência</h2>
+        <div className="flex flex-col">
+          <h2 className="w-fit self-center py-8 text-6xl font-semibold">
+            Experiência
+          </h2>
+          <div className="flex h-144 justify-center select-none">
+            <Carousel
+              items={EXPERIENCES}
+              baseWidth={600}
+              autoplay={false}
+              autoplayDelay={3000}
+              pauseOnHover={false}
+              loop={false}
+              round={false}
+            />
+          </div>
+        </div>
+        <div className="flex flex-col">
+          <h2 className="w-fit self-center py-8 text-6xl font-semibold">
+            Conquistas
+          </h2>
           <div></div>
         </div>
-        <div className="flex w-fit flex-col items-center self-center">
-          <h2 className="py-8 text-6xl font-semibold">Conquistas</h2>
-          <div></div>
-        </div>
-        <div className="flex w-fit flex-col items-center self-center">
-          <h2 className="py-8 text-6xl font-semibold">Contato</h2>
+        <div className="flex flex-col">
+          <h2 className="w-fit self-center py-8 text-6xl font-semibold">
+            Contato
+          </h2>
           <div></div>
         </div>
       </div>
