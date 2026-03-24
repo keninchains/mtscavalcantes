@@ -16,6 +16,7 @@ import { SKILLS } from "./data/skills";
 import { Pill } from "./components/Pill";
 
 import { EXPERIENCES } from "./data/experience";
+import { ACHIEVEMENTS } from "./data/achievements";
 
 export default function App() {
   return (
@@ -150,7 +151,21 @@ export default function App() {
           <h2 className="w-fit self-center py-8 text-6xl font-semibold">
             Conquistas
           </h2>
-          <div></div>
+          <div className="debug flex justify-center px-108">
+            <div className="debug w-full">
+              <ul className="flex flex-col gap-8">
+                {ACHIEVEMENTS.map((_, index) => (
+                  <li key={index}>
+                    <div className="debug flex flex-col gap-2">
+                      <div></div>
+                      <div></div>
+                      <p className="text-lg">{_.description}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
         <div className="flex flex-col">
           <h2 className="w-fit self-center py-8 text-6xl font-semibold">
