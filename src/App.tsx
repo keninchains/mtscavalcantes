@@ -19,6 +19,7 @@ import { Linkedin3 } from "@/icons/Linkedin3";
 import { Github3 } from "@/icons/Github3";
 import Me from "@/assets/images/jpgs/me.jpg";
 import { ACHIEVEMENTS, EXPERIENCES, SKILLS } from "@/constants";
+import { ContactForm } from "./components/ContactForm";
 
 // ---------------------------------------------------------------------------
 // Sub-components
@@ -27,10 +28,17 @@ import { ACHIEVEMENTS, EXPERIENCES, SKILLS } from "@/constants";
 function Header() {
   return (
     <header className="flex items-center justify-between border-b border-white/20 bg-white/10 p-4 px-64 shadow-[0_8px_32px_rgba(0,0,0,0.25)] ring-1 ring-white/30 backdrop-blur-2xl">
-      <Logo className="size-12" />
-      <SpotlightCard className="grid place-items-center border-stone-700 px-0 py-0">
+      <div className="flex items-center gap-4">
+        <a href="#">
+          <Logo className="size-12" />
+        </a>
+        <div className="font-[BebasNeue] text-3xl select-none">
+          MATHEUS CAVALCANTE
+        </div>
+      </div>
+      <SpotlightCard className="grid place-items-center border-stone-600 px-1 py-0">
         <a
-          href="/curriculo"
+          href="/curriculo.pdf"
           className="flex h-10 w-30 items-center justify-center gap-2"
         >
           <ArrowDownTrayOutline />
@@ -68,10 +76,10 @@ function Hero() {
           />
         </div>
 
-        <ul className="flex gap-4 py-12">
+        <ul className="flex gap-6 py-12">
           <li>
             <a href="mailto:mtscavalcantes.mc@outlook.com" aria-label="Email">
-              <Email3 className="size-8" />
+              <Email3 className="size-10" />
             </a>
           </li>
           <li>
@@ -79,12 +87,12 @@ function Hero() {
               href="https://www.linkedin.com/in/ms-cavalcante/"
               aria-label="LinkedIn"
             >
-              <Linkedin3 className="size-8" />
+              <Linkedin3 className="size-10" />
             </a>
           </li>
           <li>
             <a href="https://github.com/keninchains" aria-label="GitHub">
-              <Github3 className="size-8" />
+              <Github3 className="size-10" />
             </a>
           </li>
         </ul>
@@ -180,7 +188,7 @@ function AchievementsSection() {
       <ul className="flex flex-col gap-4 px-108">
         {ACHIEVEMENTS.map((achievement, index) => (
           <li key={index}>
-            <div className="flex flex-col gap-2 rounded-2xl border border-mist-800 bg-mist-900 p-8 transition hover:border-mist-500">
+            <div className="flex flex-col gap-2 rounded-2xl border border-mist-800 bg-mist-900 p-8 transition select-none hover:border-violet-500">
               <h3 className="text-2xl">{achievement.title}</h3>
               <p className="text-lg text-mist-300">{achievement.subtitle}</p>
               <p className="text-lg">{achievement.description}</p>
@@ -196,7 +204,50 @@ function ContactSection() {
   return (
     <section className="flex flex-col">
       <SectionHeading>Contato</SectionHeading>
-      {/* TODO: add contact form or links */}
+      <div className="mb-8 flex justify-center">
+        <div className="flex w-2xl flex-col gap-2">
+          <div>
+            <p className="text-2xl">
+              Entre em contato comigo através dos links abaixo ou do formulário.
+            </p>
+          </div>
+          <div>
+            <ul className="flex flex-row justify-evenly py-4">
+              <li>
+                <a
+                  href="mailto:mtscavalcantes.mc@outlook.com"
+                  aria-label="Email"
+                  className="flex w-fit flex-row items-center gap-3 rounded-full border border-mist-600 bg-mist-900 px-4 py-2 transition hover:border-violet-500"
+                >
+                  <Email3 className="size-8" />
+                  <p>E-mail</p>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/ms-cavalcante/"
+                  aria-label="LinkedIn"
+                  className="flex w-fit flex-row items-center gap-3 rounded-full border border-mist-600 bg-mist-900 px-4 py-2 transition hover:border-violet-500"
+                >
+                  <Linkedin3 className="size-8" />
+                  <p>LinkedIn</p>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://github.com/keninchains"
+                  aria-label="GitHub"
+                  className="flex w-fit flex-row items-center gap-3 rounded-full border border-mist-600 bg-mist-900 px-4 py-2 transition hover:border-violet-500"
+                >
+                  <Github3 className="size-8" />
+                  <p>GitHub</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <ContactForm />
     </section>
   );
 }
@@ -208,7 +259,6 @@ function ContactSection() {
 export default function App() {
   return (
     <div className="flex min-h-screen flex-col bg-mist-950 text-mist-50">
-      {/* Background effect — fixed height avoids inline style */}
       <div className="relative h-225 w-full">
         <DarkVeil hueShift={350} speed={1} />
       </div>
@@ -223,8 +273,11 @@ export default function App() {
         <ContactSection />
       </main>
 
-      <footer className="mt-auto grid h-32 place-items-center">
+      <footer className="mt-auto flex h-36 flex-col items-center justify-center gap-2 select-none">
         <p className="text-sm">© 2026 · Matheus Cavalcante</p>
+        <p className="text-sm text-mist-700 italic">
+          The rain begins with a single drop.
+        </p>
       </footer>
     </div>
   );
