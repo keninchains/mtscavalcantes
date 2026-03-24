@@ -1,26 +1,23 @@
-import { MatheusCavalcante } from "./components/brand/MatheusCavalcante";
-
-import { Logo } from "./components/Logo";
-import SpotlightCard from "./components/ReactBits/SpotlightCard";
-import { ArrowDownTrayOutline } from "./components/heroicons/ArrowDownTrayOutline";
-import DarkVeil from "./components/ReactBits/DarkVeil";
-import TextType from "./components/ReactBits/TextType";
-import BorderGlow from "./components/ReactBits/BorderGlow";
-import Carousel from "./components/ReactBits/Carousel";
-
 import Me from "./assets/images/jpgs/me.jpg";
 
 import { Email3 } from "./components/iconmonstr/Email3";
-import { Github3 } from "./components/iconmonstr/Github3";
 import { Linkedin3 } from "./components/iconmonstr/Linkedin3";
+import { Github3 } from "./components/iconmonstr/Github3";
 
-import { SKILLS } from "./data/skills";
+import { Logo } from "./components/Logo";
 import { Pill } from "./components/Pill";
 
-import { EXPERIENCES } from "./data/experience";
-import { ACHIEVEMENTS } from "./data/achievements";
+import { ArrowDownTrayOutline } from "./components/heroicons/ArrowDownTrayOutline";
 
-import { formatDatePtBR } from "./lib/formatDatePtBR";
+import BorderGlow from "./components/ReactBits/BorderGlow";
+import Carousel from "./components/ReactBits/Carousel";
+import DarkVeil from "./components/ReactBits/DarkVeil";
+import SpotlightCard from "./components/ReactBits/SpotlightCard";
+import TextType from "./components/ReactBits/TextType";
+
+import { SKILLS } from "./data/skills";
+import { EXPERIENCES } from "./data/experiences";
+import { ACHIEVEMENTS } from "./data/achievements";
 
 export default function App() {
   return (
@@ -32,7 +29,7 @@ export default function App() {
         <header className="flex items-center justify-between border-b border-white/20 bg-white/10 p-4 px-64 shadow-[0_8px_32px_rgba(0,0,0,0.25)] ring-1 ring-white/30 backdrop-blur-2xl">
           <div className="flex items-center gap-4">
             <Logo className="size-12" />
-            <MatheusCavalcante className="debug" />
+            {/* <MatheusCavalcante className="debug" /> */}
           </div>
           <div className="flex items-center">
             <SpotlightCard className="grid place-items-center border-stone-700 px-0 py-0">
@@ -163,7 +160,6 @@ export default function App() {
                     <div className="flex flex-col gap-2 rounded-2xl border border-mist-800 bg-mist-900 p-8 transition hover:border-mist-500">
                       <div className="flex flex-row justify-between">
                         <h2 className="text-2xl">{_.title}</h2>
-                        <p className="text-lg">{formatDatePtBR(_.date)}</p>
                       </div>
                       <div className="text-lg text-mist-300">
                         <p>{_.subtitle}</p>

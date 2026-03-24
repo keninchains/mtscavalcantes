@@ -5,17 +5,9 @@ import {
   useMotionValue,
   useTransform,
 } from "motion/react";
-import React, { type JSX } from "react";
+import type { JSX } from "react";
 import { formatDatePtBR } from "@/lib/formatDatePtBR";
 
-// replace icons with your own if needed
-import {
-  FiCircle,
-  FiCode,
-  FiFileText,
-  FiLayers,
-  FiLayout,
-} from "react-icons/fi";
 export interface CarouselItem {
   id: number;
   icon: string;

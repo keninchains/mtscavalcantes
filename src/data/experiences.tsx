@@ -4,17 +4,6 @@ import LogoUtfpr from "@/assets/images/pngs/utfpr.png";
 import LogoOccam from "@/assets/images/pngs/occam.png";
 import LogoSprint from "@/assets/images/pngs/sprint.png";
 
-/*
-type Experience = {
-  icon: React.ReactNode;
-  title: string;
-  role: string;
-  startDate: Date;
-  endDate?: Date;
-  details: string[];
-};
-*/
-
 export const EXPERIENCES: CarouselItem[] = [
   {
     id: 1,
@@ -34,12 +23,12 @@ export const EXPERIENCES: CarouselItem[] = [
     icon: LogoOccam,
     title: "OCCAM Engenharia",
     role: "Assessor de Marketing",
-    startDate: new Date(2024, 4),
+    startDate: new Date(2024, 8),
     endDate: new Date(2025, 3),
     description: [
       "Administrei e gerenciei as contas de redes sociais da OCCAM Engenharia no Instagram e no LinkedIn.",
       "Designei e criei publicações, reels e stories para redes sociais sobre nossa área de atuação e o que fazíamos.",
-      "Como trainee, liderei um time de seis pessoas em um projeto front-end de website empresarial, durante 6 meses.",
+      "Como trainee, liderei um time de seis pessoas em um projeto front-end de website empresarial durante 6 meses.",
     ],
   },
   {
