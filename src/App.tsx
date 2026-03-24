@@ -129,16 +129,16 @@ function AboutSection() {
             />
             <p className="text-lg">
               Estudante do quarto ano de Engenharia de Computação na UTFPR,
-              câmpus Pato Branco. Atuo profissionalmente como Desenvolvedor Web
-              Full-Stack, implementando funcionalidades robustas e contribuindo
-              na criação de produtos inovadores e elegantes. Possuo fortes
-              habilidades analíticas, facilidade para aprender novas
-              tecnologias, e vocação natural para papéis de liderança. Na
-              faculdade, participei de quatro olimpíadas de conhecimento
-              (Cálculo), obtendo ótimos resultados em todas elas. Além disso,
-              atuei como monitor de Cálculo I por dois semestres, ajudando
-              dezenas de estudantes mensalmente com atendimentos presenciais e
-              remotos.
+              buscando oportunidades de estágio na área de tecnologia. Atuo
+              profissionalmente como Desenvolvedor Web Full-Stack, implementando
+              funcionalidades robustas e contribuindo na criação de produtos
+              inovadores e elegantes. Possuo fortes habilidades analíticas,
+              facilidade para aprender novas tecnologias, e vocação natural para
+              papéis de liderança. Na faculdade, participei de quatro olimpíadas
+              de conhecimento (Cálculo), obtendo ótimos resultados em todas
+              elas. Além disso, atuei como monitor de Cálculo I por dois
+              semestres, ajudando dezenas de estudantes mensalmente com
+              atendimentos presenciais e remotos.
             </p>
           </div>
         </BorderGlow>
