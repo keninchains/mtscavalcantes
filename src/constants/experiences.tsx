@@ -1,4 +1,4 @@
-import type { CarouselItem } from "@/components/ReactBits/Carousel";
+import type { CarouselItem } from "@/components/Carousel";
 
 import LogoUtfpr from "@/assets/images/pngs/utfpr.png";
 import LogoOccam from "@/assets/images/pngs/occam.png";

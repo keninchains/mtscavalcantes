@@ -1,6 +1,4 @@
-type Props = {
-  className?: string;
-};
+import type { Props } from "./types";
 
 export function Github3({ className }: Props) {
   return (

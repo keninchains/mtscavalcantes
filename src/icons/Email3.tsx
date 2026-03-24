@@ -1,6 +1,4 @@
-type Props = {
-  className?: string;
-};
+import type { Props } from "./types";
 
 export function Email3({ className }: Props) {
   return (

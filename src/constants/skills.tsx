@@ -6,7 +6,7 @@ import {
   PostgresqlIcon,
   GitIcon,
   FigmaIcon,
-} from "@/components/devicon";
+} from "@/icons";
 
 type Skill = {
   icon: React.ReactNode;

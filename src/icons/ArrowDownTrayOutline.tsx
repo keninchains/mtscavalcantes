@@ -1,6 +1,4 @@
-type Props = {
-  className?: string;
-};
+import type { Props } from "./types";
 
 export function ArrowDownTrayOutline({ className = "size-6" }: Props) {
   return (
