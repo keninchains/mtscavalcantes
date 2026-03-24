@@ -18,6 +18,8 @@ import { Pill } from "./components/Pill";
 import { EXPERIENCES } from "./data/experience";
 import { ACHIEVEMENTS } from "./data/achievements";
 
+import { formatDatePtBR } from "./lib/formatDatePtBR";
+
 export default function App() {
   return (
     <div className="flex min-h-screen flex-col bg-mist-950 text-mist-50">
@@ -151,14 +153,19 @@ export default function App() {
           <h2 className="w-fit self-center py-8 text-6xl font-semibold">
             Conquistas
           </h2>
-          <div className="debug flex justify-center px-108">
-            <div className="debug w-full">
-              <ul className="flex flex-col gap-8">
+          <div className="flex justify-center px-108">
+            <div className="w-full">
+              <ul className="flex flex-col gap-4">
                 {ACHIEVEMENTS.map((_, index) => (
                   <li key={index}>
-                    <div className="debug flex flex-col gap-2">
-                      <div></div>
-                      <div></div>
+                    <div className="flex flex-col gap-2 rounded-2xl border border-mist-800 bg-mist-900 p-8 transition hover:border-mist-500">
+                      <div className="flex flex-row justify-between">
+                        <h2 className="text-2xl">{_.title}</h2>
+                        <p className="text-lg">{formatDatePtBR(_.date)}</p>
+                      </div>
+                      <div className="text-lg text-mist-300">
+                        <p>{_.subtitle}</p>
+                      </div>
                       <p className="text-lg">{_.description}</p>
                     </div>
                   </li>
