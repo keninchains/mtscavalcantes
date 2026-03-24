@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "./figtree.css";
+@import "./bebas-neue.css";
 
 body {
   font-family: "Figtree", sans-serif;

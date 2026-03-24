@@ -1,3 +1,5 @@
+import { MatheusCavalcante } from "./components/brand/MatheusCavalcante";
+
 import { Logo } from "./components/Logo";
 import SpotlightCard from "./components/ReactBits/SpotlightCard";
 import { ArrowDownTrayOutline } from "./components/heroicons/ArrowDownTrayOutline";
@@ -30,7 +32,7 @@ export default function App() {
         <header className="flex items-center justify-between border-b border-white/20 bg-white/10 p-4 px-64 shadow-[0_8px_32px_rgba(0,0,0,0.25)] ring-1 ring-white/30 backdrop-blur-2xl">
           <div className="flex items-center gap-4">
             <Logo className="size-12" />
-            <p className="text-2xl font-semibold">Matheus Cavalcante</p>
+            <MatheusCavalcante className="debug" />
           </div>
           <div className="flex items-center">
             <SpotlightCard className="grid place-items-center border-stone-700 px-0 py-0">

@@ -1,0 +1,7 @@
+@font-face {
+  font-family: BebasNeue;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/bebas-neue/BebasNeue-Regular.woff2") format("woff2");
+}
