@@ -52,21 +52,21 @@ function Header() {
 
 function Hero() {
   return (
-    <div className="absolute flex h-screen w-full flex-col">
+    <div className="flex flex-col">
       <Header />
 
-      <div className="mt-36 flex flex-col items-center gap-4">
+      <div className="flex flex-col items-center">
         <h1 className="text-center text-6xl font-semibold">
           Olá, sou o Matheus Cavalcante!
         </h1>
 
-        <div className="text-3xl font-semibold">
-          {/* <TextType
+        <div className="flex h-32 items-center px-8 text-center text-3xl font-semibold">
+          <TextType
             text={[
               "Estudante de Engenharia de Computação",
               "Desenvolvedor Web Full-Stack",
             ]}
-            initialDelay={1000}
+            initialDelay={1500}
             typingSpeed={75}
             pauseDuration={2500}
             loop
@@ -74,16 +74,16 @@ function Hero() {
             cursorCharacter="_"
             deletingSpeed={50}
             cursorBlinkDuration={0.5}
-          /> */}
+          />
         </div>
 
-        <ul className="flex gap-6 py-12">
-          <li>
+        <ul className="flex gap-8">
+          <li key="email">
             <a href="mailto:mtscavalcantes.mc@outlook.com" aria-label="Email">
               <Email3 className="size-10" />
             </a>
           </li>
-          <li>
+          <li key="linkedin">
             <a
               href="https://www.linkedin.com/in/ms-cavalcante/"
               aria-label="LinkedIn"
@@ -91,7 +91,7 @@ function Hero() {
               <Linkedin3 className="size-10" />
             </a>
           </li>
-          <li>
+          <li key="github">
             <a href="https://github.com/keninchains" aria-label="GitHub">
               <Github3 className="size-10" />
             </a>
@@ -103,11 +103,7 @@ function Hero() {
 }
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
-  return (
-    <h2 className="w-fit self-center py-8 text-6xl font-semibold">
-      {children}
-    </h2>
-  );
+  return <h2 className="mx-auto w-fit text-6xl font-semibold">{children}</h2>;
 }
 
 function AboutSection() {
@@ -150,9 +146,9 @@ function AboutSection() {
 
 function SkillsSection() {
   return (
-    <section className="flex flex-col">
+    <section>
       <SectionHeading>Habilidades</SectionHeading>
-      <ul className="flex flex-wrap justify-center gap-6 px-96">
+      <ul className="mx-auto flex max-w-3xl flex-col flex-wrap items-center justify-center gap-6 sm:flex-row">
         {SKILLS.map((skill, index) => (
           <li key={index}>
             <Pill icon={skill.icon} title={skill.title} />
