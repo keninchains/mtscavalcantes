@@ -174,7 +174,7 @@ function ExperiencesSection() {
         {EXPERIENCES.map((experience, index) => (
           <li key={index}>
             <div className="rounded-2xl border border-mist-700 bg-mist-900 transition hover:border-violet-500">
-              <div className="flex items-center justify-center rounded-t-2xl bg-mist-200 p-4">
+              <div className="flex h-40 items-center justify-center rounded-t-2xl bg-mist-200 p-4">
                 <img src={experience.src} className="h-16" />
               </div>
               <div className="px-6 pb-6">
@@ -247,12 +247,12 @@ function ContactSection() {
   return (
     <section>
       <SectionHeading>Contato</SectionHeading>
-      <div className="mx-auto max-w-2xl px-4">
+      <div className="mx-auto max-w-2xl px-4 sm:px-0">
         <p className="text-2xl">
           Entre em contato comigo através dos links abaixo ou do formulário.
         </p>
       </div>
-      <ul className="mx-auto flex max-w-2xl flex-col gap-4 px-4">
+      <ul className="mx-auto flex max-w-2xl flex-col gap-4 px-4 py-8 sm:px-0">
         <li key="email">
           <a
             href="mailto:mtscavalcantes.mc@outlook.com"
