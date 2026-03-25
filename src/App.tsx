@@ -52,15 +52,15 @@ function Header() {
 
 function Hero() {
   return (
-    <div className="flex flex-col">
+    <div className="flex h-screen w-full flex-col">
       <Header />
 
-      <div className="flex flex-col items-center">
+      <div className="my-auto flex flex-col items-center gap-8">
         <h1 className="text-center text-6xl font-semibold">
           Olá, sou o Matheus Cavalcante!
         </h1>
 
-        <div className="flex h-32 items-center px-8 text-center text-3xl font-semibold">
+        <div className="flex h-32 px-8 text-center text-3xl font-semibold">
           <TextType
             text={[
               "Estudante de Engenharia de Computação",
@@ -174,8 +174,8 @@ function ExperiencesSection() {
         {EXPERIENCES.map((experience, index) => (
           <li key={index}>
             <div className="rounded-2xl border border-mist-700 bg-mist-900 transition hover:border-violet-500">
-              <div className="flex items-center justify-center rounded-t-2xl bg-mist-200 p-8">
-                <img src={experience.src} className="h-24" />
+              <div className="flex items-center justify-center rounded-t-2xl bg-mist-200 p-4">
+                <img src={experience.src} className="h-16" />
               </div>
               <div className="px-6 pb-6">
                 <h2 className="py-2 text-center text-4xl font-semibold">
@@ -296,8 +296,8 @@ function ContactSection() {
 export default function App() {
   return (
     <div className="flex flex-col">
-      <div className="debug relative h-225 w-full">
-        <DarkVeil hueShift={350} speed={1} />
+      <div>
+        <DarkVeil hueShift={0} speed={2} warpAmount={0} />
       </div>
 
       <Hero />
