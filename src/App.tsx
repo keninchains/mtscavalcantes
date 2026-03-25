@@ -52,7 +52,7 @@ function Header() {
 
 function Hero() {
   return (
-    <div className="flex h-screen w-full flex-col">
+    <div className="absolute flex h-screen w-full flex-col">
       <Header />
 
       <div className="my-auto flex flex-col items-center gap-8">
@@ -296,7 +296,7 @@ function ContactSection() {
 export default function App() {
   return (
     <div className="flex flex-col">
-      <div>
+      <div className="h-screen">
         <DarkVeil hueShift={0} speed={2} warpAmount={0} />
       </div>
 
