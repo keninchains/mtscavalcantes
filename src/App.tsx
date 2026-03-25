@@ -103,14 +103,16 @@ function Hero() {
 }
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
-  return <h2 className="mx-auto w-fit text-6xl font-semibold">{children}</h2>;
+  return (
+    <h2 className="mx-auto w-fit py-8 text-6xl font-semibold">{children}</h2>
+  );
 }
 
 function AboutSection() {
   return (
-    <section className="flex flex-col items-center bg-linear-to-b from-black to-transparent">
+    <section className="bg-linear-to-b from-black to-transparent">
       <SectionHeading>Sobre</SectionHeading>
-      <div className="px-80">
+      <div className="mx-auto max-w-4xl px-4">
         <BorderGlow
           edgeSensitivity={10}
           glowColor="260 100 50"
@@ -118,25 +120,30 @@ function AboutSection() {
           coneSpread={10}
           className="p-8"
         >
-          <div className="flex flex-row gap-8">
+          <div className="flex flex-col items-center gap-8 md:flex-row">
             <img
               src={Me}
-              className="size-64 shrink-0 rounded-full"
+              className="size-64 rounded-full"
               alt="Matheus Cavalcante"
             />
-            <p className="text-lg">
-              Estudante do quarto ano de Engenharia de Computação na UTFPR,
-              buscando oportunidades de estágio na área de tecnologia. Atuo
-              profissionalmente como Desenvolvedor Web Full-Stack, implementando
-              funcionalidades robustas e contribuindo na criação de produtos
-              inovadores e elegantes. Possuo fortes habilidades analíticas,
-              facilidade para aprender novas tecnologias, e vocação natural para
-              papéis de liderança. Na faculdade, participei de quatro olimpíadas
-              de conhecimento (Cálculo), obtendo ótimos resultados em todas
-              elas. Além disso, atuei como monitor de Cálculo I por dois
-              semestres, ajudando dezenas de estudantes mensalmente com
-              atendimentos presenciais e remotos.
-            </p>
+            <div className="text-lg">
+              <p>
+                Estudante do quarto ano de Engenharia de Computação na UTFPR,
+                buscando oportunidades de estágio na área de tecnologia. Atuo
+                profissionalmente como Desenvolvedor Web Full-Stack,
+                implementando funcionalidades robustas e contribuindo na criação
+                de produtos inovadores e elegantes.
+              </p>
+              <p className="indent-8">
+                Possuo fortes habilidades analíticas, facilidade para aprender
+                novas tecnologias, e vocação natural para papéis de liderança.
+                Na faculdade, participei de quatro olimpíadas de conhecimento
+                (Cálculo), obtendo ótimos resultados em todas elas. Além disso,
+                atuei como monitor de Cálculo I por dois semestres, ajudando
+                dezenas de estudantes mensalmente com atendimentos presenciais e
+                remotos.
+              </p>
+            </div>
           </div>
         </BorderGlow>
       </div>
@@ -161,15 +168,13 @@ function SkillsSection() {
 
 function ExperienceSection() {
   return (
-    <section className="flex flex-col">
+    <section>
       <SectionHeading>Experiência</SectionHeading>
-      <div className="flex h-144 justify-center select-none">
+      <div className="debug mx-auto flex max-w-3xl justify-center px-4">
         <Carousel
           items={EXPERIENCES}
-          baseWidth={600}
           autoplay={false}
           autoplayDelay={3000}
-          pauseOnHover={false}
           loop={false}
           round={false}
         />
@@ -180,14 +185,18 @@ function ExperienceSection() {
 
 function AchievementsSection() {
   return (
-    <section className="flex flex-col">
+    <section>
       <SectionHeading>Conquistas</SectionHeading>
-      <ul className="flex flex-col gap-4 px-108">
+      <ul className="mx-auto flex max-w-2xl flex-col gap-6 px-4">
         {ACHIEVEMENTS.map((achievement, index) => (
           <li key={index}>
-            <div className="flex flex-col gap-2 rounded-2xl border border-mist-800 bg-mist-900 p-8 transition select-none hover:border-violet-500">
-              <h3 className="text-2xl">{achievement.title}</h3>
-              <p className="text-lg text-mist-300">{achievement.subtitle}</p>
+            <div className="flex flex-col gap-2 rounded-2xl border border-mist-700 bg-mist-900 p-6 transition select-none hover:border-violet-500">
+              <div>
+                <h3 className="text-2xl font-semibold">{achievement.title}</h3>
+                <span className="text-lg text-mist-400">
+                  {achievement.subtitle}
+                </span>
+              </div>
               <p className="text-lg">{achievement.description}</p>
             </div>
           </li>
@@ -199,51 +208,45 @@ function AchievementsSection() {
 
 function ContactSection() {
   return (
-    <section className="flex flex-col">
+    <section>
       <SectionHeading>Contato</SectionHeading>
-      <div className="mb-8 flex justify-center">
-        <div className="flex w-2xl flex-col gap-2">
-          <div>
-            <p className="text-2xl">
-              Entre em contato comigo através dos links abaixo ou do formulário.
-            </p>
-          </div>
-          <div>
-            <ul className="flex flex-row justify-evenly py-4">
-              <li>
-                <a
-                  href="mailto:mtscavalcantes.mc@outlook.com"
-                  aria-label="Email"
-                  className="flex w-fit flex-row items-center gap-3 rounded-full border border-mist-600 bg-mist-900 px-4 py-2 transition hover:border-violet-500"
-                >
-                  <Email3 className="size-8" />
-                  <p>E-mail</p>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.linkedin.com/in/ms-cavalcante/"
-                  aria-label="LinkedIn"
-                  className="flex w-fit flex-row items-center gap-3 rounded-full border border-mist-600 bg-mist-900 px-4 py-2 transition hover:border-violet-500"
-                >
-                  <Linkedin3 className="size-8" />
-                  <p>LinkedIn</p>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://github.com/keninchains"
-                  aria-label="GitHub"
-                  className="flex w-fit flex-row items-center gap-3 rounded-full border border-mist-600 bg-mist-900 px-4 py-2 transition hover:border-violet-500"
-                >
-                  <Github3 className="size-8" />
-                  <p>GitHub</p>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
+      <div className="mx-auto max-w-2xl px-4">
+        <p className="text-2xl">
+          Entre em contato comigo através dos links abaixo ou do formulário.
+        </p>
       </div>
+      <ul className="mx-auto flex max-w-2xl flex-col gap-4 px-4">
+        <li key="email">
+          <a
+            href="mailto:mtscavalcantes.mc@outlook.com"
+            aria-label="Email"
+            className="flex w-fit items-center gap-2 rounded-full border border-mist-700 bg-mist-900 px-4 py-2 transition hover:border-violet-500"
+          >
+            <Email3 className="size-8" />
+            <span className="text-lg">E-mail</span>
+          </a>
+        </li>
+        <li key="linkedin">
+          <a
+            href="https://www.linkedin.com/in/ms-cavalcante/"
+            aria-label="LinkedIn"
+            className="flex w-fit items-center gap-2 rounded-full border border-mist-600 bg-mist-900 px-4 py-2 transition hover:border-violet-500"
+          >
+            <Linkedin3 className="size-8" />
+            <span className="text-lg">LinkedIn</span>
+          </a>
+        </li>
+        <li key="github">
+          <a
+            href="https://github.com/keninchains"
+            aria-label="GitHub"
+            className="flex w-fit items-center gap-2 rounded-full border border-mist-600 bg-mist-900 px-4 py-2 transition hover:border-violet-500"
+          >
+            <Github3 className="size-8" />
+            <span className="text-lg">GitHub</span>
+          </a>
+        </li>
+      </ul>
       <ContactForm />
     </section>
   );

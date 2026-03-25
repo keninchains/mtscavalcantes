@@ -97,8 +97,8 @@ export function ContactForm() {
   };
 
   return (
-    <div className="flex justify-center px-80">
-      <div className="w-full max-w-2xl rounded-2xl border border-mist-800 bg-mist-900 p-10 transition hover:border-violet-500">
+    <div className="flex justify-center px-4">
+      <div className="w-full max-w-2xl rounded-2xl border border-mist-700 bg-mist-900 p-10 transition hover:border-violet-500">
         {submitState === "success" ? (
           // ---- Success state ----
           <div className="flex flex-col items-center gap-4 py-12 text-center">
