@@ -27,24 +27,25 @@ import { ContactForm } from "./components/ContactForm";
 
 function Header() {
   return (
-    <header className="flex items-center justify-between border-b border-white/20 bg-white/10 p-4 px-64 shadow-[0_8px_32px_rgba(0,0,0,0.25)] ring-1 ring-white/30 backdrop-blur-2xl">
-      <div className="flex items-center gap-4">
-        <a href="#">
-          <Logo className="size-12" />
-        </a>
-        <div className="font-[BebasNeue] text-3xl select-none">
-          MATHEUS CAVALCANTE
+    <header className="h-24 border-b border-white/20 bg-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.25)] ring-1 ring-white/40 backdrop-blur-2xl">
+      <div className="mx-auto flex h-full w-full max-w-6xl items-center justify-between px-4">
+        <div className="flex items-center gap-4">
+          <Logo className="size-16" />
+          <div className="flex flex-col font-[BebasNeue] text-3xl select-none">
+            <span>MATHEUS</span>
+            <span>CAVALCANTE</span>
+          </div>
         </div>
+        <SpotlightCard className="flex items-center justify-center border-stone-600 px-0 py-0">
+          <a
+            href="/curriculo.pdf"
+            className="flex h-10 w-30 items-center justify-center gap-1.5"
+          >
+            <ArrowDownTrayOutline />
+            <span>Currículo</span>
+          </a>
+        </SpotlightCard>
       </div>
-      <SpotlightCard className="grid place-items-center border-stone-600 px-1 py-0">
-        <a
-          href="/curriculo.pdf"
-          className="flex h-10 w-30 items-center justify-center gap-2"
-        >
-          <ArrowDownTrayOutline />
-          <span>Currículo</span>
-        </a>
-      </SpotlightCard>
     </header>
   );
 }
@@ -60,7 +61,7 @@ function Hero() {
         </h1>
 
         <div className="text-3xl font-semibold">
-          <TextType
+          {/* <TextType
             text={[
               "Estudante de Engenharia de Computação",
               "Desenvolvedor Web Full-Stack",
@@ -73,7 +74,7 @@ function Hero() {
             cursorCharacter="_"
             deletingSpeed={50}
             cursorBlinkDuration={0.5}
-          />
+          /> */}
         </div>
 
         <ul className="flex gap-6 py-12">
