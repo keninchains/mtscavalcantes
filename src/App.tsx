@@ -11,7 +11,6 @@ import { Logo } from "@/components/Logo";
 import SpotlightCard from "@/components/SpotlightCard";
 import TextType from "@/components/TextType";
 import BorderGlow from "@/components/BorderGlow";
-import Carousel from "@/components/Carousel";
 import { Pill } from "@/components/Pill";
 import { ArrowDownTrayOutline } from "@/icons/ArrowDownTrayOutline";
 import { Email3 } from "@/icons/Email3";
@@ -20,6 +19,7 @@ import { Github3 } from "@/icons/Github3";
 import Me from "@/assets/images/jpgs/me.jpg";
 import { ACHIEVEMENTS, EXPERIENCES, SKILLS } from "@/constants";
 import { ContactForm } from "./components/ContactForm";
+import { formatDatePtBR } from "./lib/formatDatePtBR";
 
 // ---------------------------------------------------------------------------
 // Sub-components
@@ -166,19 +166,56 @@ function SkillsSection() {
   );
 }
 
-function ExperienceSection() {
+function ExperiencesSection() {
   return (
     <section>
       <SectionHeading>Experiência</SectionHeading>
-      <div className="debug mx-auto flex max-w-3xl justify-center px-4">
-        <Carousel
-          items={EXPERIENCES}
-          autoplay={false}
-          autoplayDelay={3000}
-          loop={false}
-          round={false}
-        />
-      </div>
+      <ul className="mx-auto flex max-w-2xl flex-col gap-6 px-4">
+        {EXPERIENCES.map((experience, index) => (
+          <li key={index}>
+            <div className="rounded-2xl border border-mist-700 bg-mist-900 transition hover:border-violet-500">
+              <div className="flex items-center justify-center rounded-t-2xl bg-mist-200 p-8">
+                <img src={experience.src} className="h-24" />
+              </div>
+              <div className="px-6 pb-6">
+                <h2 className="py-2 text-center text-4xl font-semibold">
+                  {experience.title}
+                </h2>
+                <div className="flex items-center justify-center gap-2 text-lg text-mist-400">
+                  <span>{formatDatePtBR(experience.startDate)}</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="size-6"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+                    />
+                  </svg>
+                  <span>
+                    {experience.endDate
+                      ? formatDatePtBR(experience.endDate)
+                      : `presente`}
+                  </span>
+                </div>
+                <p className="mx-auto w-fit py-4 text-2xl font-semibold">
+                  {experience.role}
+                </p>
+                <ul className="flex list-inside list-disc flex-col gap-3 text-lg">
+                  {experience.description.map((description, dIndex) => (
+                    <li key={dIndex}>{description}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }
@@ -258,22 +295,22 @@ function ContactSection() {
 
 export default function App() {
   return (
-    <div className="flex min-h-screen flex-col bg-mist-950 text-mist-50">
-      <div className="relative h-225 w-full">
+    <div className="flex flex-col">
+      <div className="debug relative h-225 w-full">
         <DarkVeil hueShift={350} speed={1} />
       </div>
 
       <Hero />
 
-      <main className="flex flex-col gap-8">
+      <main className="flex flex-col gap-16">
         <AboutSection />
         <SkillsSection />
-        <ExperienceSection />
+        <ExperiencesSection />
         <AchievementsSection />
         <ContactSection />
       </main>
 
-      <footer className="mt-auto flex h-36 flex-col items-center justify-center gap-2 select-none">
+      <footer className="flex h-44 flex-col items-center justify-center">
         <p className="text-sm">© 2026 · Matheus Cavalcante</p>
         <p className="text-sm text-mist-700 italic">
           The rain begins with a single drop.

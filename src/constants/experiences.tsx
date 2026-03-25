@@ -1,26 +1,31 @@
-import type { CarouselItem } from "@/components/Carousel";
-
 import LogoUtfpr from "@/assets/images/pngs/utfpr.png";
 import LogoOccam from "@/assets/images/pngs/occam.png";
 import LogoSprint from "@/assets/images/pngs/sprint.png";
 
-export const EXPERIENCES: CarouselItem[] = [
+type Experience = {
+  src: string;
+  title: string;
+  role: string;
+  startDate: Date;
+  endDate?: Date;
+  description: string[];
+};
+
+export const EXPERIENCES: Experience[] = [
   {
-    id: 1,
-    icon: LogoUtfpr,
-    title: "UTFPR",
-    role: "Monitor de Cálculo I",
-    startDate: new Date(2023, 8),
-    endDate: new Date(2024, 6),
+    src: LogoSprint,
+    title: "sprinT",
+    role: "Estagiário",
+    startDate: new Date(2025, 8),
+    endDate: undefined,
     description: [
-      "Atendi de forma presencial e remota os alunos da universidade para resolução de dúvidas na disciplina.",
-      "Revisei e corrigi diversos materiais didáticos usados por professores (apostilas, listas e gabaritos).",
-      "Intermediei o feedback de alunos para professores acerca do conteúdo ministrado nos cursos.",
+      "Redigi documentos internos e criei planilhas visando melhorar as metodologias operacionais da empresa.",
+      "Contribuí no processo de contratação de novos empreendimentos através da redação de novos contratos.",
+      "Gerenciei o website da empresa, publicando editais e anexos para a comunidade empreendedora.",
     ],
   },
   {
-    id: 2,
-    icon: LogoOccam,
+    src: LogoOccam,
     title: "OCCAM Engenharia",
     role: "Assessor de Marketing",
     startDate: new Date(2024, 8),
@@ -32,16 +37,15 @@ export const EXPERIENCES: CarouselItem[] = [
     ],
   },
   {
-    id: 3,
-    icon: LogoSprint,
-    title: "sprinT",
-    role: "Estagiário",
-    startDate: new Date(2025, 8),
-    endDate: undefined,
+    src: LogoUtfpr,
+    title: "UTFPR",
+    role: "Monitor de Cálculo I",
+    startDate: new Date(2023, 8),
+    endDate: new Date(2024, 6),
     description: [
-      "Redigi documentos internos e criei planilhas visando melhorar as metodologias operacionais da empresa.",
-      "Contribuí no processo de contratação de novos empreendimentos através da redação de novos contratos.",
-      "Gerenciei o website da empresa, publicando editais e anexos para a comunidade empreendedora.",
+      "Atendi de forma presencial e remota os alunos da universidade para resolução de dúvidas na disciplina.",
+      "Revisei e corrigi diversos materiais didáticos usados por professores (apostilas, listas e gabaritos).",
+      "Intermediei o feedback de alunos para professores acerca do conteúdo ministrado nos cursos.",
     ],
   },
 ];

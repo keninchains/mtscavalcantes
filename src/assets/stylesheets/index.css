@@ -4,6 +4,8 @@
 
 body {
   font-family: "Figtree", sans-serif;
+  background-color: var(--color-mist-950);
+  color: var(--color-mist-50);
 }
 
 .debug {
