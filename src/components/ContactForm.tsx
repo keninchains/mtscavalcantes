@@ -126,7 +126,8 @@ export function ContactForm() {
             onChange={handleInteraction}
             noValidate
             className="flex flex-col gap-6"
-            netlify
+            action="https://formspree.io/f/xojpveaq"
+            method="POST"
           >
             {/* Name + Email — side by side on wider viewports */}
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
