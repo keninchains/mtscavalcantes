@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { useState } from "react";
 import { useForm as useFormSpree } from "@formspree/react";
 
 // ---------------------------------------------------------------------------
@@ -62,6 +63,7 @@ const inputBase =
 
 export function ContactForm() {
   const [formSpreeState, handleFormSpreeSubmit] = useFormSpree("xojpveaq");
+  const [dismissed, setDismissed] = useState(false);
 
   const {
     register,
@@ -74,9 +76,13 @@ export function ContactForm() {
   });
 
   const onSubmit = async (data: ContactFields) => {
+    setDismissed(false);
     await handleFormSpreeSubmit(data);
-    // Formspree sets formSpreeState.succeeded on success.
-    // reset() is called below only when succeeded renders, avoiding a stale reset.
+  };
+
+  const handleSendAnother = () => {
+    reset();
+    setDismissed(true);
   };
 
   const isLoading = isSubmitting || formSpreeState.submitting;
@@ -84,7 +90,7 @@ export function ContactForm() {
     !formSpreeState.submitting && formSpreeState.errors != null;
 
   // Success screen
-  if (formSpreeState.succeeded) {
+  if (formSpreeState.succeeded && !dismissed) {
     return (
       <div className="flex justify-center px-4">
         <div className="w-full max-w-2xl rounded-2xl border border-mist-700 bg-mist-900 p-10">
@@ -100,7 +106,7 @@ export function ContactForm() {
             </p>
             <button
               type="button"
-              onClick={() => reset()}
+              onClick={handleSendAnother}
               className="mt-4 rounded-xl border border-mist-700 px-6 py-2 text-sm text-mist-300 transition hover:border-violet-500 hover:text-mist-50"
             >
               Enviar outra mensagem
