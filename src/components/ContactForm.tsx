@@ -83,7 +83,7 @@ export function ContactForm() {
       // });
       // if (!res.ok) throw new Error("Server error");
 
-      console.log("Contact form payload:", data); // remove after wiring up
+      // console.log("Contact form payload:", data); // remove after wiring up
       setSubmitState("success");
       reset();
     } catch {
@@ -126,6 +126,7 @@ export function ContactForm() {
             onChange={handleInteraction}
             noValidate
             className="flex flex-col gap-6"
+            netlify
           >
             {/* Name + Email — side by side on wider viewports */}
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">

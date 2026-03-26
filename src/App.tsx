@@ -122,7 +122,7 @@ function AboutSection() {
               funcionalidades robustas e contribuindo na criação de produtos
               inovadores e elegantes.
             </p>
-            <p className="indent-8">
+            <p className="indent-6">
               Possuo fortes habilidades analíticas, facilidade para aprender
               novas tecnologias, e vocação natural para papéis de liderança. Na
               faculdade, participei de quatro olimpíadas de conhecimento
