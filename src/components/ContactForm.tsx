@@ -83,7 +83,7 @@ export function ContactForm() {
       // });
       // if (!res.ok) throw new Error("Server error");
 
-      // console.log("Contact form payload:", data); // remove after wiring up
+      console.log("Contact form payload:", data); // remove after wiring up
       setSubmitState("success");
       reset();
     } catch {
