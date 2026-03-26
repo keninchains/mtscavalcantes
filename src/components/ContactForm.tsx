@@ -3,6 +3,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useState } from "react";
 
+// formspree
+import { useForm as useFormSpree } from "@formspree/react";
+
 // ---------------------------------------------------------------------------
 // Contact form — schema & component
 // ---------------------------------------------------------------------------
@@ -58,6 +61,8 @@ const inputBase =
 export function ContactForm() {
   const [submitState, setSubmitState] = useState<SubmitState>("idle");
 
+  const [formSpreeState, handleFormSpreeSubmit] = useFormSpree("xojpveaq");
+
   const {
     register,
     handleSubmit,
@@ -75,6 +80,8 @@ export function ContactForm() {
       // Simulated delay so UX feedback is visible.
       await new Promise<void>((resolve) => setTimeout(resolve, 1200));
 
+      handleFormSpreeSubmit(data);
+
       // Example with fetch:
       // const res = await fetch("/api/contact", {
       //   method: "POST",
@@ -83,7 +90,7 @@ export function ContactForm() {
       // });
       // if (!res.ok) throw new Error("Server error");
 
-      console.log("Contact form payload:", data); // remove after wiring up
+      console.log("Contact form payload:", formSpreeState); // remove after wiring up
       setSubmitState("success");
       reset();
     } catch {
@@ -126,7 +133,6 @@ export function ContactForm() {
             onChange={handleInteraction}
             noValidate
             className="flex flex-col gap-6"
-            action="https://formspree.io/f/xojpveaq"
             method="POST"
           >
             {/* Name + Email — side by side on wider viewports */}
