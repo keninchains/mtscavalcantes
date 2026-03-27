@@ -17,6 +17,7 @@ import Me from "@/assets/images/jpgs/me.jpg";
 import { ACHIEVEMENTS, EXPERIENCES, SKILLS } from "@/constants";
 import { ContactForm } from "./components/ContactForm";
 import { formatDatePtBR } from "./lib/formatDatePtBR";
+import FloatingLines from "./components/FloatingLines";
 
 // ---------------------------------------------------------------------------
 // Sub-components
@@ -47,15 +48,15 @@ function Header() {
 
 function Hero() {
   return (
-    <div className="flex h-screen max-h-225 flex-col">
+    <div className="absolute flex h-screen max-h-225 w-full flex-col">
       <Header />
 
       <div className="my-auto flex flex-col items-center gap-4">
-        <h1 className="text-center text-4xl font-semibold">
+        <h1 className="text-center text-4xl font-semibold drop-shadow drop-shadow-mist-900/50">
           Olá, sou o Matheus Cavalcante!
         </h1>
 
-        <div className="flex h-32 px-8 text-center text-3xl font-semibold">
+        <div className="flex h-20 px-4 text-center text-3xl font-semibold sm:h-12 sm:items-center">
           <TextType
             text={[
               "Estudante de Engenharia de Computação",
@@ -69,30 +70,35 @@ function Hero() {
             cursorCharacter="_"
             deletingSpeed={50}
             cursorBlinkDuration={0.5}
+            className="drop-shadow drop-shadow-mist-900/50"
           />
         </div>
 
-        <ul className="flex gap-8">
-          <li key="email">
-            <a href="mailto:mtscavalcantes.mc@outlook.com" aria-label="Email">
-              <Email3 className="size-10" />
-            </a>
-          </li>
-          <li key="linkedin">
-            <a
-              href="https://www.linkedin.com/in/ms-cavalcante/"
-              aria-label="LinkedIn"
-            >
-              <Linkedin3 className="size-10" />
-            </a>
-          </li>
-          <li key="github">
-            <a href="https://github.com/keninchains" aria-label="GitHub">
-              <Github3 className="size-10" />
-            </a>
-          </li>
-        </ul>
+        <div className="rounded-full border border-white/20 bg-white/10 px-8 py-4 shadow-[0_8px_32px_rgba(0,0,0,0.25)] ring-1 ring-white/40 backdrop-blur-2xl">
+          <ul className="flex gap-6">
+            <li key="email">
+              <a href="mailto:mtscavalcantes.mc@outlook.com" aria-label="Email">
+                <Email3 className="size-10" />
+              </a>
+            </li>
+            <li key="linkedin">
+              <a
+                href="https://www.linkedin.com/in/ms-cavalcante/"
+                aria-label="LinkedIn"
+              >
+                <Linkedin3 className="size-10" />
+              </a>
+            </li>
+            <li key="github">
+              <a href="https://github.com/keninchains" aria-label="GitHub">
+                <Github3 className="size-10" />
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
+
+      <div className="h-32 bg-linear-to-b from-transparent to-mist-950"></div>
     </div>
   );
 }
@@ -105,7 +111,7 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
 
 function AboutSection() {
   return (
-    <section>
+    <section className="bg-linear-to-b to-mist-950">
       <SectionHeading>Sobre</SectionHeading>
       <div className="mx-auto max-w-4xl px-4">
         <div className="flex flex-col items-center gap-6 rounded-4xl border border-mist-700 bg-mist-900 p-6 transition hover:border-violet-500 md:flex-row">
@@ -157,7 +163,7 @@ function ExperiencesSection() {
   return (
     <section>
       <SectionHeading>Experiência</SectionHeading>
-      <ul className="mx-auto flex max-w-2xl flex-col gap-4 px-4">
+      <ul className="mx-auto flex max-w-xl flex-col gap-4 px-4 sm:px-0">
         {EXPERIENCES.map((experience, index) => (
           <li key={index}>
             <div className="rounded-2xl border border-mist-700 bg-mist-900 transition hover:border-violet-500">
@@ -176,7 +182,7 @@ function ExperiencesSection() {
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
-                    className="size-6"
+                    className="size-4"
                   >
                     <path
                       strokeLinecap="round"
@@ -211,7 +217,7 @@ function AchievementsSection() {
   return (
     <section>
       <SectionHeading>Conquistas</SectionHeading>
-      <ul className="mx-auto flex max-w-2xl flex-col gap-4 px-4">
+      <ul className="mx-auto flex max-w-2xl flex-col gap-4 px-4 sm:px-0">
         {ACHIEVEMENTS.map((achievement, index) => (
           <li key={index}>
             <div className="flex flex-col gap-2 rounded-2xl border border-mist-700 bg-mist-900 p-6 transition select-none hover:border-violet-500">
@@ -281,6 +287,10 @@ function ContactSection() {
 export default function App() {
   return (
     <div className="flex flex-col">
+      <div className="h-screen max-h-225 w-full">
+        <FloatingLines />
+      </div>
+
       <Hero />
 
       <main className="flex flex-col gap-16">
